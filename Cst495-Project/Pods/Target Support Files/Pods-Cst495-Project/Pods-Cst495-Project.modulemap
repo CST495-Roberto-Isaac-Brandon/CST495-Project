@@ -1,0 +1,6 @@
+framework module Pods_Cst495_Project {
+  umbrella header "Pods-Cst495-Project-umbrella.h"
+
+  export *
+  module * { export * }
+}
