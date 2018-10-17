@@ -22,6 +22,8 @@ The following **stretch** user stories are implemented:
 - [ ] Pins physical grows based on ratings.
 - [ ] Pins expire after certain based on time.
 - [ ] Users can save pins.
+## Data Schema
+<a href="https://imgur.com/ICXy0CY"><img src="https://i.imgur.com/ICXy0CY.png" title="source: imgur.com" /></a>
 
 ## License
 
