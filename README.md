@@ -7,21 +7,23 @@ In a world where connection to one another is lessoned by technology everyday,My
 ## User Stories
 
 The following **required** user stories are complete:
-
+- [ ] User can create account and login.
 - [ ] User can view map.
-- [ ] User location is updated with map.
 - [ ] User can take picture.
 - [ ] User's picture pinned automatically on map.
-- [ ] User's adds a post.
-- [ ] User can click on pin point to view details.
+- [ ] User can add a post as a pin.
+
 
 The following **stretch** user stories are implemented:
 
+- [ ] User can click on pin point to view details.
+- [ ] User location is updated with map.
 - [ ] Users can rated pins.
 - [ ] Users can comment on pins.
 - [ ] Pins physical grows based on ratings.
 - [ ] Pins expire after certain based on time.
 - [ ] Users can save pins.
+
 ## Data Schema
 <a href="https://imgur.com/ICXy0CY"><img src="https://i.imgur.com/ICXy0CY.png" title="source: imgur.com" /></a>
 
