@@ -45,7 +45,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yqt-KF-7qo">
                                 <rect key="frame" x="52" y="252" width="271" height="30"/>
@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="132.68365817091455"/>
         </scene>
-        <!--myMap-->
+        <!--myTour-->
         <scene sceneID="L5s-Mx-wY8">
             <objects>
                 <viewController id="t2C-Za-gBe" customClass="MapViewController" customModule="Cst495_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,21 +109,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ldP-CA-cS4">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <tabBar alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYb-63-oF8">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="K7Y-73-zc7"/>
+                                    <tabBarItem systemItem="more" id="HeP-Ua-4oS">
+                                        <color key="badgeColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                </items>
+                                <color key="barTintColor" red="0.23660189330242534" green="0.13182117404786201" blue="0.37592072384006481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedImageTintColor" red="0.91136320655211855" green="0.92172497510910034" blue="0.10037440062932788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yct-i0-pC2"/>
                     </view>
-                    <navigationItem key="navigationItem" title="myMap" id="sk8-0u-yN9"/>
+                    <navigationItem key="navigationItem" title="myTour" id="sk8-0u-yN9">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="KYJ-hh-tLN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="Evi-5f-6Ve"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="ldP-CA-cS4" id="z86-cT-VJq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmo-LX-qBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1685.5072463768117" y="133.69565217391306"/>
+            <point key="canvasLocation" x="1684" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yeL-Df-aHI">
