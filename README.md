@@ -7,8 +7,8 @@ In a world where connection to one another is lessoned by technology everyday,My
 ## User Stories
 
 The following **required** user stories are complete:
-- [ ] User can create account and login.
-- [ ] User can view map.
+- [x] User can create account and login.
+- [x] User can view map.
 - [ ] User can take picture.
 - [ ] User's picture pinned automatically on map.
 - [ ] User can add a post as a pin.
@@ -26,6 +26,9 @@ The following **stretch** user stories are implemented:
 
 ## Data Schema
 <a href="https://imgur.com/ICXy0CY"><img src="https://i.imgur.com/ICXy0CY.png" title="source: imgur.com" /></a>
+
+## Week 1 Gif
+<a href="https://imgur.com/fABGGs8"><img src="https://i.imgur.com/fABGGs8.gif" title="source: imgur.com" /></a>
 
 ## License
 
