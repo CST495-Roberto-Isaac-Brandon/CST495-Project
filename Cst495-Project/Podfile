@@ -6,6 +6,8 @@ target 'Cst495-Project' do
   use_frameworks!
 
   # Pods for Cst495-Project
+  pod 'Parse'
+  pod 'ParseUI'
 
   target 'Cst495-ProjectTests' do
     inherit! :search_paths

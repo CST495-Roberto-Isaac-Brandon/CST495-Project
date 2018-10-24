@@ -10,12 +10,14 @@
 		53B15046429B013C58936EFE /* Pods_Cst495_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33AC458E0E4EDBA512325C9F /* Pods_Cst495_Project.framework */; };
 		55132BD56CB8BFB2F58EB352 /* Pods_Cst495_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D2B105B01C6C20E0D250CF /* Pods_Cst495_ProjectTests.framework */; };
 		5AFBF9502164533300872218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF94F2164533300872218 /* AppDelegate.swift */; };
-		5AFBF9522164533300872218 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF9512164533300872218 /* ViewController.swift */; };
 		5AFBF9552164533300872218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF9532164533300872218 /* Main.storyboard */; };
 		5AFBF9572164533400872218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF9562164533400872218 /* Assets.xcassets */; };
 		5AFBF95A2164533400872218 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF9582164533400872218 /* LaunchScreen.storyboard */; };
 		5AFBF9652164533400872218 /* Cst495_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF9642164533400872218 /* Cst495_ProjectTests.swift */; };
 		5AFBF9702164533400872218 /* Cst495_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF96F2164533400872218 /* Cst495_ProjectUITests.swift */; };
+		D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBD7217FF7F900228076 /* LoginViewController.swift */; };
+		D115DBDA2180128900228076 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D115DBD92180128900228076 /* MapKit.framework */; };
+		D115DBDC218012D600228076 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBDB218012D600228076 /* MapViewController.swift */; };
 		EDFDBA2805DE34E6DEF4987A /* Pods_Cst495_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0387DA4615B1B369E0732AD0 /* Pods_Cst495_ProjectUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +44,6 @@
 		424E9FB573ED054F38641403 /* Pods-Cst495-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-Project/Pods-Cst495-Project.release.xcconfig"; sourceTree = "<group>"; };
 		5AFBF94C2164533300872218 /* Cst495-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cst495-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFBF94F2164533300872218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5AFBF9512164533300872218 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5AFBF9542164533300872218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5AFBF9562164533400872218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AFBF9592164533400872218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +59,9 @@
 		9602817BA79DEAF23BDBFD15 /* Pods-Cst495-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectUITests/Pods-Cst495-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A49AA9F26121561B304BF865 /* Pods-Cst495-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectTests/Pods-Cst495-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0D2B105B01C6C20E0D250CF /* Pods_Cst495_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cst495_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D115DBD7217FF7F900228076 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D115DBD92180128900228076 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D115DBDB218012D600228076 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E290C61A3008D571DD1CCD57 /* Pods-Cst495-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectUITests/Pods-Cst495-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D115DBDA2180128900228076 /* MapKit.framework in Frameworks */,
 				53B15046429B013C58936EFE /* Pods_Cst495_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +110,7 @@
 		567CFAE0141B81A1677D318F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D115DBD92180128900228076 /* MapKit.framework */,
 				33AC458E0E4EDBA512325C9F /* Pods_Cst495_Project.framework */,
 				B0D2B105B01C6C20E0D250CF /* Pods_Cst495_ProjectTests.framework */,
 				0387DA4615B1B369E0732AD0 /* Pods_Cst495_ProjectUITests.framework */,
@@ -137,8 +143,8 @@
 		5AFBF94E2164533300872218 /* Cst495-Project */ = {
 			isa = PBXGroup;
 			children = (
+				D115DBD6217FF7B100228076 /* View Controllers */,
 				5AFBF94F2164533300872218 /* AppDelegate.swift */,
-				5AFBF9512164533300872218 /* ViewController.swift */,
 				5AFBF9532164533300872218 /* Main.storyboard */,
 				5AFBF9562164533400872218 /* Assets.xcassets */,
 				5AFBF9582164533400872218 /* LaunchScreen.storyboard */,
@@ -165,6 +171,15 @@
 			path = "Cst495-ProjectUITests";
 			sourceTree = "<group>";
 		};
+		D115DBD6217FF7B100228076 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D115DBD7217FF7F900228076 /* LoginViewController.swift */,
+				D115DBDB218012D600228076 /* MapViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,6 +191,7 @@
 				5AFBF9482164533300872218 /* Sources */,
 				5AFBF9492164533300872218 /* Frameworks */,
 				5AFBF94A2164533300872218 /* Resources */,
+				278602EA7B5D4F5869F31E2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -295,6 +311,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		278602EA7B5D4F5869F31E2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Cst495-Project/Pods-Cst495-Project-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cst495-Project/Pods-Cst495-Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		927183FF06D30DE9B6AACD57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,7 +398,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AFBF9522164533300872218 /* ViewController.swift in Sources */,
+				D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */,
+				D115DBDC218012D600228076 /* MapViewController.swift in Sources */,
 				5AFBF9502164533300872218 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,7 +577,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W83V27F4X;
 				INFOPLIST_FILE = "Cst495-Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,7 +597,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W83V27F4X;
 				INFOPLIST_FILE = "Cst495-Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
