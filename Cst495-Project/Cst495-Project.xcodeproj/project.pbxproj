@@ -18,6 +18,7 @@
 		D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBD7217FF7F900228076 /* LoginViewController.swift */; };
 		D115DBDA2180128900228076 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D115DBD92180128900228076 /* MapKit.framework */; };
 		D115DBDC218012D600228076 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBDB218012D600228076 /* MapViewController.swift */; };
+		D128B40B21836B7600E9168E /* DeatailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D128B40A21836B7600E9168E /* DeatailViewController.swift */; };
 		EDFDBA2805DE34E6DEF4987A /* Pods_Cst495_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0387DA4615B1B369E0732AD0 /* Pods_Cst495_ProjectUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		D115DBD7217FF7F900228076 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D115DBD92180128900228076 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D115DBDB218012D600228076 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D128B40A21836B7600E9168E /* DeatailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeatailViewController.swift; sourceTree = "<group>"; };
 		E290C61A3008D571DD1CCD57 /* Pods-Cst495-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectUITests/Pods-Cst495-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 			children = (
 				D115DBD7217FF7F900228076 /* LoginViewController.swift */,
 				D115DBDB218012D600228076 /* MapViewController.swift */,
+				D128B40A21836B7600E9168E /* DeatailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */,
+				D128B40B21836B7600E9168E /* DeatailViewController.swift in Sources */,
 				D115DBDC218012D600228076 /* MapViewController.swift in Sources */,
 				5AFBF9502164533300872218 /* AppDelegate.swift in Sources */,
 			);
