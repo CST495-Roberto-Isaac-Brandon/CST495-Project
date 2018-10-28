@@ -8,20 +8,87 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-
+    let alertController = UIAlertController(title: "Error", message: "User Location Not Enabled", preferredStyle: .alert)
+    let locationManger = CLLocationManager()
+    let regionInMeters: Double = 10000
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let montRegion = MKCoordinateRegion(center: CLLocationCoordinate2DMake(36.65442, -121.8018),span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-        mapView.setRegion(montRegion, animated: false)
-        
+//        let montRegion = MKCoordinateRegion(center: CLLocationCoordinate2DMake(36.65442, -121.8018),span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+//        mapView.setRegion(montRegion, animated: false)
         mapView.delegate = self
         
         // Do any additional setup after loading the view.
+        checkLocationAuthorization()
+    }
+    
+    func centerViewOnUserLocation(){
+        if let location = locationManger.location?.coordinate {
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
+    }
+    
+    func checkLocationAuthorization(){
+        switch CLLocationManager.authorizationStatus() {
+        // When app is open that is only time authorization is allowed
+        case .authorizedWhenInUse:
+            //Do map stuff
+            //mapView.showsUserLocation = true
+            centerViewOnUserLocation()
+            break
+        case .denied:
+            //Show alert to turn on permissions
+            break
+        case .notDetermined:
+            locationManger.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            //Show alert parental restriction on
+            break
+        //Location can be retrieved in the background
+        case .authorizedAlways:
+            break
+        }
+    }
+    
+    func setupLocationManager(){
+        locationManger.delegate = self
+        locationManger.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+  
+    
+    func checkLocationServices(){
+        if CLLocationManager.locationServicesEnabled(){
+           //
+            setupLocationManager()
+            checkLocationAuthorization()
+            
+        }
+        else{
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+//            { (action) in
+//                // handle cancel response here. Doing nothing will dismiss the view.
+//            }
+//
+//            let OKAction = UIAlertAction(title: "OK", style: .default)
+//            { (action) in
+//                // handle response here.
+//            }
+
+            //
+            
+        }
+        
+       
     }
     
 
@@ -35,4 +102,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     */
 
+}
+
+extension MapViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //
+    }
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        //
+    }
 }
