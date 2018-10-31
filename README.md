@@ -9,6 +9,8 @@ In a world where connection to one another is lessoned by technology everyday,My
 The following **required** user stories are complete:
 - [x] User can create account and login.
 - [x] User can view map.
+- [X] User location is on the map.
+- [X] User location radius is zoomed in.
 - [ ] User can take picture.
 - [ ] User's picture pinned automatically on map.
 - [ ] User can add a post as a pin.
@@ -17,7 +19,6 @@ The following **required** user stories are complete:
 The following **stretch** user stories are implemented:
 
 - [ ] User can click on pin point to view details.
-- [ ] User location is updated with map.
 - [ ] Users can rated pins.
 - [ ] Users can comment on pins.
 - [ ] Pins physical grows based on ratings.
