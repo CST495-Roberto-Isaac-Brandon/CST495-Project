@@ -31,6 +31,9 @@ The following **stretch** user stories are implemented:
 ## Week 1 Gif
 <a href="https://imgur.com/fABGGs8"><img src="https://i.imgur.com/fABGGs8.gif" title="source: imgur.com" /></a>
 
+## Week 2 Gif
+<a href="https://i.imgur.com/VAonXXG.gif"><img src="https://i.imgur.com/fABGGs8.gif" title="source: imgur.com" /></a>
+
 ## License
 
     Copyright [2018] [Isaac Rodriguez] [Roberto Bradley] [Brandon Shimizu]
