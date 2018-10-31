@@ -10,12 +10,13 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController{
     
     @IBOutlet weak var mapView: MKMapView!
+    
     let alertController = UIAlertController(title: "Error", message: "User Location Not Enabled", preferredStyle: .alert)
     let locationManger = CLLocationManager()
-    let regionInMeters: Double = 10000
+    let regionInMeters: Double = 1000
     
     
     override func viewDidLoad() {
@@ -23,9 +24,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
 //        let montRegion = MKCoordinateRegion(center: CLLocationCoordinate2DMake(36.65442, -121.8018),span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
 //        mapView.setRegion(montRegion, animated: false)
-        mapView.delegate = self
-        
-        // Do any additional setup after loading the view.
         checkLocationAuthorization()
     }
     
@@ -43,13 +41,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             //Do map stuff
             //mapView.showsUserLocation = true
             centerViewOnUserLocation()
+            locationManger.startUpdatingLocation()
             break
         case .denied:
             //Show alert to turn on permissions
             break
         case .notDetermined:
             locationManger.requestWhenInUseAuthorization()
-            break
         case .restricted:
             //Show alert parental restriction on
             break
@@ -106,9 +104,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
 extension MapViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //
+        guard let location = locations.last else { return }
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        //
+        checkLocationAuthorization()
     }
 }
