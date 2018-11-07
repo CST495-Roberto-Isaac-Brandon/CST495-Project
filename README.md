@@ -9,15 +9,14 @@ In a world where connection to one another is lessoned by technology everyday,My
 The following **required** user stories are complete:
 - [x] User can create account and login.
 - [x] User can view map.
-- [X] User location is on the map.
-- [X] User location radius is zoomed in.
-- [ ] User can take picture.
-- [ ] User's picture pinned automatically on map.
-- [ ] User can add a post as a pin.
+- [x] User location is on the map.
+- [x] User location radius is zoomed in.
+- [x] User can take picture.
+- [x] User can add a post as a pin.
 
 
 The following **stretch** user stories are implemented:
-
+- [ ] User's picture pinned automatically on map.
 - [ ] User can click on pin point to view details.
 - [ ] Users can rated pins.
 - [ ] Users can comment on pins.
@@ -29,10 +28,13 @@ The following **stretch** user stories are implemented:
 <a href="https://imgur.com/ICXy0CY"><img src="https://i.imgur.com/ICXy0CY.png" title="source: imgur.com" /></a>
 
 ## Week 1 Gif
-<a href="https://imgur.com/fABGGs8"><img src="https://i.imgur.com/fABGGs8.gif" title="source: imgur.com" /></a>
+<a href="https://imgur.com/fABGGs8.gif"><img src="https://i.imgur.com/fABGGs8.gif" title="source: imgur.com" /></a>
 
 ## Week 2 Gif
-<a href="https://i.imgur.com/VAonXXG.gif"><img src="https://i.imgur.com/fABGGs8.gif" title="source: imgur.com" /></a>
+<a href="https://i.imgur.com/VAonXXG.gif"><img src="https://i.imgur.com/VAonXXG.gif" title="source: imgur.com" /></a>
+
+## Week 3 Gif
+<a href="https://i.imgur.com/dzvln2R.gif"><img src="https://i.imgur.com/dzvln2R.gif" title="source: imgur.com" /></a>
 
 ## License
 
