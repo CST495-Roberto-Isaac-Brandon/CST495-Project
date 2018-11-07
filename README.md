@@ -34,7 +34,7 @@ The following **stretch** user stories are implemented:
 <a href="https://i.imgur.com/VAonXXG.gif"><img src="https://i.imgur.com/VAonXXG.gif" title="source: imgur.com" /></a>
 
 ## Week 3 Gif
-<a href="https://i.imgur.com/Vp7aFNC.gif"><img src="https://i.imgur.com/Vp7aFNC.gif" title="source: imgur.com" /></a>
+<a href="https://media.giphy.com/media/3q3Q8SLYQWFAOXDdYW/giphy.gif"><img src="https://media.giphy.com/media/3q3Q8SLYQWFAOXDdYW/giphy.gif" title="source: imgur.com" /></a>
 
 ## License
 
