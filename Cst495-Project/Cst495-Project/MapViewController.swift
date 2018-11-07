@@ -10,11 +10,15 @@ import UIKit
 import MapKit
 import CoreLocation
 
+var allPins = [MKPointAnnotation]()
+
 class MapViewController: UIViewController{
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var postButton: UIButton!
+    
     var check = Bool()
+    
     
     
     
@@ -25,8 +29,14 @@ class MapViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(check)
+        
+        //print(check)
+        
         if(check == true){
+            //allPins.append(newPin)
+            //loadView()
+            restorePins()
+            print(String(allPins.count))
             setPin()
             print("check is now true")
             check = false
@@ -122,15 +132,38 @@ class MapViewController: UIViewController{
     
     func setPin(){
         //mapView.removeAnnotation(newPin)
+        var newPin = MKPointAnnotation()
         let location = locationManger.location
         let center = CLLocationCoordinate2D(latitude: (locationManger.location?.coordinate.latitude)!,longitude: (locationManger.location?.coordinate.longitude)!)
         newPin.coordinate = (location?.coordinate)!
+        allPins.append(newPin)
+        print("number in function" + String(allPins.count))
         mapView.addAnnotation(newPin)
+        
+    }
+    
+    //attempting to restore each pin saved in the array.
+    func restorePins()
+    {
+        for pin in allPins
+        {
+           mapView.addAnnotation(pin)
+        }
+        
+    }
+    
+    func destroyPins()
+    {
+        for pin in allPins
+        {
+            mapView.removeAnnotation(pin)
+        }
     }
     
 }
 
-let newPin = MKPointAnnotation()
+
+
 
 extension MapViewController: CLLocationManagerDelegate{
     
