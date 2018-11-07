@@ -18,7 +18,6 @@
 		D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBD7217FF7F900228076 /* LoginViewController.swift */; };
 		D115DBDA2180128900228076 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D115DBD92180128900228076 /* MapKit.framework */; };
 		D115DBDC218012D600228076 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBDB218012D600228076 /* MapViewController.swift */; };
-		D128B40B21836B7600E9168E /* DeatailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D128B40A21836B7600E9168E /* DeatailViewController.swift */; };
 		D128B40D21837A6A00E9168E /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D128B40C21837A6A00E9168E /* PostViewController.swift */; };
 		EDFDBA2805DE34E6DEF4987A /* Pods_Cst495_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0387DA4615B1B369E0732AD0 /* Pods_Cst495_ProjectUITests.framework */; };
 /* End PBXBuildFile section */
@@ -64,7 +63,6 @@
 		D115DBD7217FF7F900228076 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D115DBD92180128900228076 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D115DBDB218012D600228076 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		D128B40A21836B7600E9168E /* DeatailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeatailViewController.swift; sourceTree = "<group>"; };
 		D128B40C21837A6A00E9168E /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E290C61A3008D571DD1CCD57 /* Pods-Cst495-ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectUITests/Pods-Cst495-ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,7 +178,6 @@
 			children = (
 				D115DBD7217FF7F900228076 /* LoginViewController.swift */,
 				D115DBDB218012D600228076 /* MapViewController.swift */,
-				D128B40A21836B7600E9168E /* DeatailViewController.swift */,
 				D128B40C21837A6A00E9168E /* PostViewController.swift */,
 			);
 			name = "View Controllers";
@@ -405,7 +402,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */,
-				D128B40B21836B7600E9168E /* DeatailViewController.swift in Sources */,
 				D115DBDC218012D600228076 /* MapViewController.swift in Sources */,
 				5AFBF9502164533300872218 /* AppDelegate.swift in Sources */,
 				D128B40D21837A6A00E9168E /* PostViewController.swift in Sources */,
@@ -514,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -569,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -584,16 +580,18 @@
 			baseConfigurationReference = 5B6C99CA0B489E97BCA5778A /* Pods-Cst495-Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2M6KHL3RM;
+				DEVELOPMENT_TEAM = 9W83V27F4X;
 				INFOPLIST_FILE = "Cst495-Project/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "irodriguez.Cst495-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "bshimizu.Cst495-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -604,16 +602,18 @@
 			baseConfigurationReference = 424E9FB573ED054F38641403 /* Pods-Cst495-Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2M6KHL3RM;
+				DEVELOPMENT_TEAM = 9W83V27F4X;
 				INFOPLIST_FILE = "Cst495-Project/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "irodriguez.Cst495-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "bshimizu.Cst495-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

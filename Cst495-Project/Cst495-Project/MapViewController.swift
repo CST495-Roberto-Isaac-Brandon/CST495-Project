@@ -13,6 +13,10 @@ import CoreLocation
 class MapViewController: UIViewController{
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var postButton: UIButton!
+    var check = Bool()
+    
+    
     
     let alertController = UIAlertController(title: "Error", message: "User Location Not Enabled", preferredStyle: .alert)
     let locationManger = CLLocationManager()
@@ -21,11 +25,17 @@ class MapViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(check)
+        if(check == true){
+            setPin()
+            print("check is now true")
+            check = false
+        }
 //        let montRegion = MKCoordinateRegion(center: CLLocationCoordinate2DMake(36.65442, -121.8018),span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
 //        mapView.setRegion(montRegion, animated: false)
         checkLocationAuthorization()
     }
+    
     
     func centerViewOnUserLocation(){
         if let location = locationManger.location?.coordinate {
@@ -100,9 +110,30 @@ class MapViewController: UIViewController{
     }
     */
 
+    
+    
+    
+    
+    @IBAction func postButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "postSegue", sender: self)
+    }
+    
+    
+    
+    func setPin(){
+        //mapView.removeAnnotation(newPin)
+        let location = locationManger.location
+        let center = CLLocationCoordinate2D(latitude: (locationManger.location?.coordinate.latitude)!,longitude: (locationManger.location?.coordinate.longitude)!)
+        newPin.coordinate = (location?.coordinate)!
+        mapView.addAnnotation(newPin)
+    }
+    
 }
 
+let newPin = MKPointAnnotation()
+
 extension MapViewController: CLLocationManagerDelegate{
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
@@ -111,4 +142,9 @@ extension MapViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
+    
+
+    
+    
 }
+
