@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,19 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="cartoon-cosmic-background-with-earth-planet-in-vector-11414990" translatesAutoresizingMaskIntoConstraints="NO" id="rZH-4q-Ma4">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="cartoon-cosmic-background-with-earth-planet-in-vector-11414990" translatesAutoresizingMaskIntoConstraints="NO" id="rZH-4q-Ma4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="myTour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-oz-PAX">
-                                <rect key="frame" x="49" y="145" width="276" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="myTour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="23" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-oz-PAX">
+                                <rect key="frame" x="50" y="122" width="275.5" height="121"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="65"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ATb-oz-PAX" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="102" id="9WJ-Mh-oCz"/>
+                            <constraint firstItem="rZH-4q-Ma4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BYT-zQ-Bj5"/>
+                            <constraint firstItem="rZH-4q-Ma4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FZS-aF-ZRR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ATb-oz-PAX" secondAttribute="bottom" constant="424" id="hKF-Gd-L1Z"/>
+                            <constraint firstItem="rZH-4q-Ma4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jUr-bG-QK6"/>
+                            <constraint firstItem="ATb-oz-PAX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="l4j-zm-42S"/>
+                            <constraint firstItem="rZH-4q-Ma4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wT4-DH-Vgg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

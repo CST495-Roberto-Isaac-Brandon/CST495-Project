@@ -104,13 +104,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ldP-CA-cS4">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ldP-CA-cS4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5l-7s-TDU">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5l-7s-TDU">
                                 <rect key="frame" x="103" y="554" width="168" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.20006505259999999" green="0.71427704020000005" blue="0.21566380509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Post">
@@ -122,6 +120,13 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ldP-CA-cS4" firstAttribute="top" secondItem="yct-i0-pC2" secondAttribute="top" constant="44" id="Al1-im-LFm"/>
+                            <constraint firstAttribute="bottom" secondItem="ldP-CA-cS4" secondAttribute="bottom" id="NdA-cZ-Hb0"/>
+                            <constraint firstItem="ldP-CA-cS4" firstAttribute="trailing" secondItem="yct-i0-pC2" secondAttribute="trailing" id="Nuh-LM-b7W"/>
+                            <constraint firstItem="j5l-7s-TDU" firstAttribute="centerX" secondItem="YyE-bu-Yc3" secondAttribute="centerX" id="sWi-4r-W7U"/>
+                            <constraint firstItem="ldP-CA-cS4" firstAttribute="leading" secondItem="yct-i0-pC2" secondAttribute="leading" id="sh1-1q-wKK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yct-i0-pC2"/>
                     </view>
                     <toolbarItems/>
@@ -148,10 +153,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-Yo-1YL">
-                                <rect key="frame" x="110" y="566" width="157" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write your Story" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6lx-f9-qEB">
+                                <rect key="frame" x="43" y="335" width="291" height="203"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="3Z3-OO-kHq">
+                                <rect key="frame" x="43" y="61" width="291" height="236"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Z3-OO-kHq" secondAttribute="height" multiplier="291:236" id="MUY-4m-wd3"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take Your Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="usl-Fg-jhj">
+                                <rect key="frame" x="43" y="305" width="291" height="22"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-Yo-1YL">
+                                <rect key="frame" x="113.5" y="546" width="148" height="35"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
+                                <size key="titleShadowOffset" width="0.0" height="-1"/>
                                 <state key="normal" title="Pin your Story">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.99215686270000003" green="0.30588235289999999" blue="0.050980392159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -160,28 +185,23 @@
                                     <action selector="pinButton:" destination="nJ1-Iy-D69" eventType="touchUpInside" id="0Oe-1Q-Spv"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write your Story" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6lx-f9-qEB">
-                                <rect key="frame" x="42" y="384" width="291" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="3Z3-OO-kHq">
-                                <rect key="frame" x="43" y="97" width="291" height="236"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <gestureRecognizers/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take Your Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usl-Fg-jhj">
-                                <rect key="frame" x="87" y="352" width="199" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.41014955947909193" green="0.35223423045808361" blue="0.53121034263959377" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6lx-f9-qEB" firstAttribute="leading" secondItem="ya4-sB-fZy" secondAttribute="leading" constant="43" id="0N5-fX-qcc"/>
+                            <constraint firstItem="6lx-f9-qEB" firstAttribute="top" secondItem="usl-Fg-jhj" secondAttribute="bottom" constant="8" id="7hQ-6g-HFg"/>
+                            <constraint firstItem="usl-Fg-jhj" firstAttribute="top" secondItem="3Z3-OO-kHq" secondAttribute="bottom" constant="8" id="84s-gz-4Ml"/>
+                            <constraint firstItem="ya4-sB-fZy" firstAttribute="trailing" secondItem="6lx-f9-qEB" secondAttribute="trailing" constant="41" id="8TN-6D-D0S"/>
+                            <constraint firstItem="ya4-sB-fZy" firstAttribute="trailing" secondItem="3Z3-OO-kHq" secondAttribute="trailing" constant="41" id="DIk-Lf-c8U"/>
+                            <constraint firstItem="3Z3-OO-kHq" firstAttribute="top" secondItem="ya4-sB-fZy" secondAttribute="top" constant="41" id="Je5-4e-tbO"/>
+                            <constraint firstItem="ya4-sB-fZy" firstAttribute="trailing" secondItem="hZt-Yo-1YL" secondAttribute="trailing" constant="113.5" id="PC4-CL-b57"/>
+                            <constraint firstItem="ya4-sB-fZy" firstAttribute="trailing" secondItem="usl-Fg-jhj" secondAttribute="trailing" constant="41" id="X5O-bW-TuR"/>
+                            <constraint firstItem="usl-Fg-jhj" firstAttribute="leading" secondItem="ya4-sB-fZy" secondAttribute="leading" constant="43" id="aMH-QY-grg"/>
+                            <constraint firstItem="3Z3-OO-kHq" firstAttribute="leading" secondItem="ya4-sB-fZy" secondAttribute="leading" constant="43" id="exR-gb-qrF"/>
+                            <constraint firstItem="ya4-sB-fZy" firstAttribute="bottom" secondItem="hZt-Yo-1YL" secondAttribute="bottom" constant="86" id="pvO-8C-v4O"/>
+                            <constraint firstItem="hZt-Yo-1YL" firstAttribute="leading" secondItem="ya4-sB-fZy" secondAttribute="leading" constant="113.5" id="pwD-LI-nMk"/>
+                            <constraint firstItem="hZt-Yo-1YL" firstAttribute="top" secondItem="6lx-f9-qEB" secondAttribute="bottom" constant="8" id="vRP-9h-zCc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ya4-sB-fZy"/>
                     </view>
                     <connections>
