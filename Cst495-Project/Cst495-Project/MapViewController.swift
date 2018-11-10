@@ -41,6 +41,8 @@ class MapViewController: UIViewController{
             print("check is now true")
             check = false
         }
+        self.postButton.layer.cornerRadius = 15
+        self.postButton.clipsToBounds = true
 //        let montRegion = MKCoordinateRegion(center: CLLocationCoordinate2DMake(36.65442, -121.8018),span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
 //        mapView.setRegion(montRegion, animated: false)
         checkLocationAuthorization()

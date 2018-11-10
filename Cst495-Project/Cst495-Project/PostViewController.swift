@@ -17,7 +17,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     let mvc = MapViewController()
     let vc = UIImagePickerController()
     @IBOutlet weak var imagePicked: UIImageView!
-    
+    @IBOutlet weak var pinButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         imagePicked.isUserInteractionEnabled = true
         imagePicked.addGestureRecognizer(tapGesture)
+        self.pinButton.layer.cornerRadius = 25
+        self.pinButton.clipsToBounds = true
     }
     
     @objc func tappedPhoto(tapGestureRecognizer: UITapGestureRecognizer){
