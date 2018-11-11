@@ -9,50 +9,59 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Parse
 
 var allPins = [MKPointAnnotation]()
 
+
 class MapViewController: UIViewController{
+    
+//static var check = Bool()
+//
+//    func changeBool(value: Bool) {
+//        MapViewController.check = value
+//    }
+    
+
+    
+   
+    
+    
+    
+    
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var postButton: UIButton!
     
-    var check = Bool()
+    
     
     
     
     
     let alertController = UIAlertController(title: "Error", message: "User Location Not Enabled", preferredStyle: .alert)
     let locationManger = CLLocationManager()
-    let regionInMeters: Double = 1000
+    let regionInMeters: Double = 100
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //print(check)
-        
-        if(check == true){
-            //allPins.append(newPin)
-            //loadView()
+        centerViewOnUserLocation()
+        if(allPins != nil){
+            fillArray()
             restorePins()
-            print(String(allPins.count))
-            setPin()
-            print("check is now true")
-            check = false
         }
+        
         self.postButton.layer.cornerRadius = 15
         self.postButton.clipsToBounds = true
-//        let montRegion = MKCoordinateRegion(center: CLLocationCoordinate2DMake(36.65442, -121.8018),span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-//        mapView.setRegion(montRegion, animated: false)
-        checkLocationAuthorization()
+        
     }
     
     
     func centerViewOnUserLocation(){
         if let location = locationManger.location?.coordinate {
             let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
-            mapView.setRegion(region, animated: true)
+            mapView.setRegion(region, animated: false)
         }
     }
     
@@ -75,6 +84,7 @@ class MapViewController: UIViewController{
             break
         //Location can be retrieved in the background
         case .authorizedAlways:
+            
             break
         }
     }
@@ -108,8 +118,9 @@ class MapViewController: UIViewController{
             
         }
         
-       
+      
     }
+    
     
 
     /*
@@ -132,16 +143,47 @@ class MapViewController: UIViewController{
     
     
     
-    func setPin(){
-        //mapView.removeAnnotation(newPin)
-        var newPin = MKPointAnnotation()
-        let location = locationManger.location
-        let center = CLLocationCoordinate2D(latitude: (locationManger.location?.coordinate.latitude)!,longitude: (locationManger.location?.coordinate.longitude)!)
-        newPin.coordinate = (location?.coordinate)!
-        allPins.append(newPin)
-        print("number in function" + String(allPins.count))
-        mapView.addAnnotation(newPin)
-        
+//    func setPin(){
+//        //mapView.removeAnnotation(newPin)
+//        if(locationManger.location == nil){
+//            print("there was no location to pin")
+//        }
+//        else {
+//        let newPin = MKPointAnnotation()
+//        let location = locationManger.location
+//
+////        let center = CLLocationCoordinate2D(latitude: (locationManger.location?.coordinate.latitude)!,longitude: (locationManger.location?.coordinate.longitude)!)
+//
+//        newPin.coordinate = (location?.coordinate)!
+//        self.parseSave(pinLocation: newPin)
+//        }
+//
+//        //mapView.addAnnotation(newPin)
+//
+//    }
+    
+    func fillArray()
+    {
+        var query = PFQuery(className: "pinInfo")
+        query.findObjectsInBackground
+        {(objects, error) -> Void in
+            if error == nil
+            {
+                print("here's the data")
+                
+                if let latslongs = objects
+                {
+                    for data in latslongs
+                    {
+                        var newPin = MKPointAnnotation()
+                        newPin.coordinate.latitude = data["pinLat"] as! CLLocationDegrees
+                        newPin.coordinate.longitude = data["pinLong"] as! CLLocationDegrees
+                        allPins.append(newPin)
+                        self.mapView.addAnnotation(newPin)
+                    }
+                }
+            }
+        }
     }
     
     //attempting to restore each pin saved in the array.
@@ -149,19 +191,30 @@ class MapViewController: UIViewController{
     {
         for pin in allPins
         {
+       
+
            mapView.addAnnotation(pin)
         }
-        
+
     }
     
     func destroyPins()
     {
-        for pin in allPins
-        {
-            mapView.removeAnnotation(pin)
-        }
+//        for pin in allPins
+//        {
+//            mapView.removeAnnotation(pin)
+//        }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                if segue.identifier == "postSegue" {
+                    let destVC = segue.destination as? PostViewController
+                    //add lat and long here
+                    destVC?.pinLat = Double((locationManger.location?.coordinate.latitude)!)
+                    destVC?.pinLong = Double((locationManger.location?.coordinate.longitude)!)
+                    print("entered the segue zone")
+                }
+            }
+   
 }
 
 

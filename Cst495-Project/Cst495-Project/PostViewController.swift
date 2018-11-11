@@ -9,11 +9,14 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import Parse
 
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var pinLat = Double()
+    var pinLong = Double()
+
     let mvc = MapViewController()
     let vc = UIImagePickerController()
     @IBOutlet weak var imagePicked: UIImageView!
@@ -64,19 +67,36 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "pinSegue" {
-            let dvc = segue.destination as? MapViewController
-            dvc?.check = true
-            print("entered the segue zone")
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "pinSegue" {
+//            let dvc = segue.destination as? MapViewController
+//            //dvc?.setPin()
+//            print("entered the segue zone")
+//        }
+//    }
+    
+    func savePinInfo(pinLat: Double, pinLong: Double)
+    {
+        let data = PFObject(className: "pinInfo")
+        data["pinLong"] = pinLong
+        data["pinLat"] = pinLat
+        
+        data.saveInBackground {(successfull,error)-> Void in
+            if successfull {
+                print("data has been sent")
+            }
+            else{
+                print("there was an error with saving")
+            }
         }
     }
     
     
-    
-    
     @IBAction func pinButton(_ sender: Any) {
-//        MapViewController().setPin()
+        // save pin info here for loading later
+        savePinInfo(pinLat: pinLat, pinLong: pinLong)
+        
+        //finally go back to main VC
         self.performSegue(withIdentifier: "pinSegue", sender: self)
     }
     
