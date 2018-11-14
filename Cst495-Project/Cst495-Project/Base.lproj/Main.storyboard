@@ -105,14 +105,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ldP-CA-cS4">
-                                <rect key="frame" x="0.0" y="108" width="374" height="601"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5l-7s-TDU">
-                                <rect key="frame" x="103" y="598" width="168" height="43"/>
+                                <rect key="frame" x="103.5" y="598" width="168" height="45"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.52549019610000003" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Aq3-O2-dfa"/>
-                                    <constraint firstAttribute="width" constant="168" id="OJY-dQ-EBu"/>
+                                    <constraint firstAttribute="width" secondItem="j5l-7s-TDU" secondAttribute="height" multiplier="56:15" id="hD6-gT-MOa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
                                 <state key="normal" title="Post">
@@ -125,14 +124,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ldP-CA-cS4" firstAttribute="top" secondItem="yct-i0-pC2" secondAttribute="top" constant="44" id="Al1-im-LFm"/>
-                            <constraint firstAttribute="bottom" secondItem="ldP-CA-cS4" secondAttribute="bottom" id="NdA-cZ-Hb0"/>
-                            <constraint firstItem="ldP-CA-cS4" firstAttribute="trailing" secondItem="yct-i0-pC2" secondAttribute="trailing" id="Nuh-LM-b7W"/>
-                            <constraint firstItem="yct-i0-pC2" firstAttribute="bottom" secondItem="j5l-7s-TDU" secondAttribute="bottom" constant="24" id="alN-5G-4Pe"/>
-                            <constraint firstItem="j5l-7s-TDU" firstAttribute="leading" secondItem="yct-i0-pC2" secondAttribute="leading" constant="103" id="jyi-4p-anK"/>
-                            <constraint firstItem="j5l-7s-TDU" firstAttribute="centerX" secondItem="YyE-bu-Yc3" secondAttribute="centerX" id="sWi-4r-W7U"/>
-                            <constraint firstItem="ldP-CA-cS4" firstAttribute="leading" secondItem="yct-i0-pC2" secondAttribute="leading" id="sh1-1q-wKK"/>
-                            <constraint firstItem="j5l-7s-TDU" firstAttribute="top" secondItem="yct-i0-pC2" secondAttribute="top" constant="534" id="vz9-eP-dQ4"/>
+                            <constraint firstItem="yct-i0-pC2" firstAttribute="bottom" secondItem="j5l-7s-TDU" secondAttribute="bottom" constant="24" id="ENs-Hq-vQv"/>
+                            <constraint firstItem="ldP-CA-cS4" firstAttribute="trailing" secondItem="yct-i0-pC2" secondAttribute="trailing" id="Eku-h8-Vt3"/>
+                            <constraint firstItem="ldP-CA-cS4" firstAttribute="leading" secondItem="yct-i0-pC2" secondAttribute="leading" id="ZAT-kl-PBe"/>
+                            <constraint firstItem="j5l-7s-TDU" firstAttribute="leading" secondItem="yct-i0-pC2" secondAttribute="leading" constant="103.5" id="hGx-k7-pSV"/>
+                            <constraint firstItem="ldP-CA-cS4" firstAttribute="top" secondItem="yct-i0-pC2" secondAttribute="top" id="jzM-NT-rQn"/>
+                            <constraint firstItem="yct-i0-pC2" firstAttribute="trailing" secondItem="j5l-7s-TDU" secondAttribute="trailing" constant="103.5" id="umH-33-R5t"/>
+                            <constraint firstItem="ldP-CA-cS4" firstAttribute="bottom" secondItem="yct-i0-pC2" secondAttribute="bottom" id="zhp-ce-EIT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yct-i0-pC2"/>
                     </view>
@@ -141,7 +139,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="KYJ-hh-tLN"/>
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="Evi-5f-6Ve"/>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="ldP-CA-cS4" id="z86-cT-VJq"/>
                         <outlet property="postButton" destination="j5l-7s-TDU" id="gEK-iG-PQr"/>
@@ -251,6 +249,6 @@
         <image name="placeholder" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PHk-wx-QXe"/>
+        <segue reference="Zq2-BE-KCQ"/>
     </inferredMetricsTieBreakers>
 </document>

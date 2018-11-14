@@ -16,7 +16,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     var pinLat = Double()
     var pinLong = Double()
-
+    var change = Bool()
+    
     let mvc = MapViewController()
     let vc = UIImagePickerController()
     @IBOutlet weak var imagePicked: UIImageView!
@@ -58,7 +59,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         self.imagePicked.image = originalImage
         self.imagePicked.contentMode = .scaleAspectFit
-        
+        change = true
         dismiss(animated: true, completion: nil)
         
         // Do something with the images (based on your use case)Cannot subscript a value of type '[String : Any]' with an index of type 'UIImagePickerController.InfoKe
@@ -75,17 +76,24 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //        }
 //    }
     
-    func savePinInfo(pinLat: Double, pinLong: Double)
+    func savePinInfo(pinLat: Double, pinLong: Double, pinImage: UIImage)
     {
         let data = PFObject(className: "pinInfo")
         data["pinLong"] = pinLong
         data["pinLat"] = pinLat
-        
-        data.saveInBackground {(successfull,error)-> Void in
-            if successfull {
+        let imagedata = pinImage.pngData() as NSData?
+        let imageFile = PFFile(data: imagedata! as Data)
+        data["pinImage"] = imageFile
+        data["likedCount"] = 1
+        data.saveInBackground
+        {
+            (successfull,error)-> Void in
+            if successfull
+            {
                 print("data has been sent")
             }
-            else{
+            else
+            {
                 print("there was an error with saving")
             }
         }
@@ -94,10 +102,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func pinButton(_ sender: Any) {
         // save pin info here for loading later
-        savePinInfo(pinLat: pinLat, pinLong: pinLong)
-        
+        if(change == true)
+        {
+            savePinInfo(pinLat: pinLat, pinLong: pinLong, pinImage: imagePicked.image!)
+            self.performSegue(withIdentifier: "pinSegue", sender: self)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "One or more fields haven't been entered", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        }
         //finally go back to main VC
-        self.performSegue(withIdentifier: "pinSegue", sender: self)
+        
     }
     
     

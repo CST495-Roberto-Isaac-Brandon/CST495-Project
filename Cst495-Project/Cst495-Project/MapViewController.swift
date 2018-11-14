@@ -45,12 +45,12 @@ class MapViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fillArray()
+        restorePins()
+        checkLocationAuthorization()
+        mapView.setUserTrackingMode(MKUserTrackingMode.followWithHeading, animated: true)
         
-        centerViewOnUserLocation()
-        if(allPins != nil){
-            fillArray()
-            restorePins()
-        }
+       
         
         self.postButton.layer.cornerRadius = 15
         self.postButton.clipsToBounds = true
@@ -166,7 +166,8 @@ class MapViewController: UIViewController{
     {
         var query = PFQuery(className: "pinInfo")
         query.findObjectsInBackground
-        {(objects, error) -> Void in
+        {
+            (objects, error) -> Void in
             if error == nil
             {
                 print("here's the data")
@@ -193,7 +194,7 @@ class MapViewController: UIViewController{
         {
        
 
-           mapView.addAnnotation(pin)
+           self.mapView.addAnnotation(pin)
         }
 
     }
@@ -202,7 +203,7 @@ class MapViewController: UIViewController{
     {
 //        for pin in allPins
 //        {
-//            mapView.removeAnnotation(pin)
+//            mapView.removeAnnotations(pin)
 //        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
