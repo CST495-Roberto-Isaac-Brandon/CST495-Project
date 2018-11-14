@@ -14,15 +14,16 @@ The following **required** user stories are complete:
 - [x] User can take picture.
 - [x] User can add a post as a pin.
 
-
 The following **stretch** user stories are implemented:
+- [x] Multiple pins show up on the map.
+- [x] Pins are persistent on load and reload.
 - [ ] User's picture pinned automatically on map.
 - [ ] User can click on pin point to view details.
-- [ ] Users can rated pins.
-- [ ] Users can comment on pins.
+- [ ] User can rated pins.
+- [ ] User can comment on pins.
 - [ ] Pins physical grows based on ratings.
 - [ ] Pins expire after certain based on time.
-- [ ] Users can save pins.
+- [x] User can save pins.
 
 ## Data Schema
 <a href="https://imgur.com/ICXy0CY"><img src="https://i.imgur.com/ICXy0CY.png" title="source: imgur.com" /></a>
@@ -35,6 +36,9 @@ The following **stretch** user stories are implemented:
 
 ## Week 3 Gif
 <a href="https://media.giphy.com/media/3q3Q8SLYQWFAOXDdYW/giphy.gif"><img src="https://media.giphy.com/media/3q3Q8SLYQWFAOXDdYW/giphy.gif" title="source: imgur.com" /></a>
+
+## Week 4 Gif
+<a href="https://i.imgur.com/cHDKLoG.gif"><img src="https://i.imgur.com/cHDKLoG.gif" title="source: imgur.com" /></a>
 
 ## License
 
