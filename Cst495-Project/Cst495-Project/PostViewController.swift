@@ -76,16 +76,18 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //        }
 //    }
     
-    func savePinInfo(pinLat: Double, pinLong: Double, pinImage: UIImage)
+    //func savePinInfo(pinLat: Double, pinLong: Double, pinImage: UIImage)
+    
+    func savePinInfo(pinLat: Double, pinLong: Double)
     {
         let data = PFObject(className: "pinInfo")
         data["pinLong"] = pinLong
         data["pinLat"] = pinLat
-        let imagedata = pinImage.pngData() as NSData?
-        let imageFile = PFFile(data: imagedata! as Data)
-        data["pinImage"] = imageFile
+//        let imagedata = pinImage.pngData() as NSData?
+//        let imageFile = PFFile(data: imagedata! as Data)
+//        data["pinImage"] = imageFile
         data["likedCount"] = 1
-        data.saveInBackground
+        data.saveInBackground()
         {
             (successfull,error)-> Void in
             if successfull
@@ -104,7 +106,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // save pin info here for loading later
         if(change == true)
         {
-            savePinInfo(pinLat: pinLat, pinLong: pinLong, pinImage: imagePicked.image!)
+            savePinInfo(pinLat: pinLat, pinLong: pinLong)
             self.performSegue(withIdentifier: "pinSegue", sender: self)
         }
         else

@@ -48,7 +48,7 @@ class MapViewController: UIViewController{
         fillArray()
         restorePins()
         checkLocationAuthorization()
-        mapView.setUserTrackingMode(MKUserTrackingMode.followWithHeading, animated: true)
+        
         
        
         
@@ -73,6 +73,7 @@ class MapViewController: UIViewController{
             //mapView.showsUserLocation = true
             centerViewOnUserLocation()
             locationManger.startUpdatingLocation()
+            mapView.setUserTrackingMode(MKUserTrackingMode.followWithHeading, animated: true)
             break
         case .denied:
             //Show alert to turn on permissions
@@ -142,26 +143,6 @@ class MapViewController: UIViewController{
     }
     
     
-    
-//    func setPin(){
-//        //mapView.removeAnnotation(newPin)
-//        if(locationManger.location == nil){
-//            print("there was no location to pin")
-//        }
-//        else {
-//        let newPin = MKPointAnnotation()
-//        let location = locationManger.location
-//
-////        let center = CLLocationCoordinate2D(latitude: (locationManger.location?.coordinate.latitude)!,longitude: (locationManger.location?.coordinate.longitude)!)
-//
-//        newPin.coordinate = (location?.coordinate)!
-//        self.parseSave(pinLocation: newPin)
-//        }
-//
-//        //mapView.addAnnotation(newPin)
-//
-//    }
-    
     func fillArray()
     {
         var query = PFQuery(className: "pinInfo")
@@ -227,6 +208,7 @@ extension MapViewController: CLLocationManagerDelegate{
         guard let location = locations.last else { return }
         let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
         mapView.setRegion(region, animated: true)
+        
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
