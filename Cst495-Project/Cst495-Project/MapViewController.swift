@@ -58,6 +58,8 @@ class MapViewController: UIViewController{
         self.mapView.clipsToBounds = true
         mapView.layer.borderWidth = 2
         mapView.layer.borderColor = UIColor.white.cgColor
+        postButton.layer.borderWidth = 2
+        postButton.layer.borderColor = UIColor.white.cgColor
     }
     
     

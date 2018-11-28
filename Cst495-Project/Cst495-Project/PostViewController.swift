@@ -17,6 +17,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var pinLat = Double()
     var pinLong = Double()
     var change = Bool()
+    var resizePic: UIImage!
+    var compressedImage: UIImage!
     
     let mvc = MapViewController()
     let vc = UIImagePickerController()
@@ -52,6 +54,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePicked.layer.borderColor = UIColor.gray.cgColor
         textBox.layer.borderWidth = 2
         textBox.layer.borderColor = UIColor.gray.cgColor
+        pinButton.layer.borderWidth = 2
+        pinButton.layer.borderColor = UIColor.white.cgColor
+        cancelBtn.layer.borderWidth = 2
+        cancelBtn.layer.borderColor = UIColor.white.cgColor
     }
     
     @objc func tappedPhoto(tapGestureRecognizer: UITapGestureRecognizer){
@@ -74,7 +80,14 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        resizePic = originalImage.resizeWithWidth(width: 200)!
+        //let compressData = UIImageJPEGRepresentation(resizePic, 0.5) //max value is 1.0 and minimum is 0.0
+        
+        let compressData = resizePic.jpegData(compressionQuality: 0.5)
+        compressedImage = UIImage(data: compressData!)
         
         self.imagePicked.image = originalImage
         self.imagePicked.contentMode = .scaleAspectFit
@@ -97,14 +110,16 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     //func savePinInfo(pinLat: Double, pinLong: Double, pinImage: UIImage)
     
-    func savePinInfo(pinLat: Double, pinLong: Double)
+    func savePinInfo(pinLat: Double, pinLong: Double, pinImage: UIImage)
     {
         let data = PFObject(className: "pinInfo")
+        
         data["pinLong"] = pinLong
         data["pinLat"] = pinLat
-//        let imagedata = pinImage.pngData() as NSData?
-//        let imageFile = PFFile(data: imagedata! as Data)
-//        data["pinImage"] = imageFile
+        data["comment"] = self.textBox.text
+        let imagedata: NSData = pinImage.jpegData(compressionQuality: 0.5)! as! NSData
+        let imageFile = PFFile(data: imagedata as Data)
+        data["pinImage"] = imageFile
         data["likedCount"] = 1
         data.saveInBackground()
         {
@@ -125,7 +140,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // save pin info here for loading later
         if(change == true)
         {
-            savePinInfo(pinLat: pinLat, pinLong: pinLong)
+            savePinInfo(pinLat: pinLat, pinLong: pinLong, pinImage: compressedImage)
             self.performSegue(withIdentifier: "pinSegue", sender: self)
         }
         else
@@ -178,4 +193,29 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     
     
+}
+
+extension UIImage {
+    func resizeWithPercent(percentage: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: size.width * percentage, height: size.height * percentage)))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
+    func resizeWithWidth(width: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: width, height: CGFloat(ceil(width/size.width * size.height)))))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
 }
