@@ -12,7 +12,7 @@ import CoreLocation
 import Parse
 
 
-class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
     
     var pinLat = Double()
     var pinLong = Double()
@@ -20,8 +20,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     let mvc = MapViewController()
     let vc = UIImagePickerController()
+    var firstEdit = true
     @IBOutlet weak var imagePicked: UIImageView!
     @IBOutlet weak var pinButton: UIButton!
+    @IBOutlet weak var textBox: UITextView!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var charCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +33,25 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedPhoto(tapGestureRecognizer:)))
         
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        textBox.delegate = self
+
+        
         imagePicked.isUserInteractionEnabled = true
         imagePicked.addGestureRecognizer(tapGesture)
         self.pinButton.layer.cornerRadius = 25
         self.pinButton.clipsToBounds = true
+        self.cancelBtn.layer.cornerRadius = 25
+        self.cancelBtn.clipsToBounds = true
+        self.imagePicked.layer.cornerRadius = 4
+        self.imagePicked.clipsToBounds = true
+        self.textBox.layer.cornerRadius = 4
+        self.textBox.clipsToBounds = true
+        imagePicked.layer.borderWidth = 2
+        imagePicked.layer.borderColor = UIColor.gray.cgColor
+        textBox.layer.borderWidth = 2
+        textBox.layer.borderColor = UIColor.gray.cgColor
     }
     
     @objc func tappedPhoto(tapGestureRecognizer: UITapGestureRecognizer){
@@ -120,8 +139,42 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
     
+    @IBAction func cancelBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        charCount.textColor = UIColor.black
+        if (firstEdit == true) {
+            textBox.text = ""
+            firstEdit = false
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // TODO: Check the proposed new text character count
+        // Allow or disallow the new text
+        // Set the max character limit
+        let characterLimit = 140
+        
+        // Construct what the new text would be if we allowed the user's latest edit
+        let newText = NSString(string: textView.text!).replacingCharacters(in: range, with: text)
+        
+        // TODO: Update Character Count Label
+        charCount.text = String(140 - newText.characters.count)
+        
+        if newText.characters.count >= 130 {
+            charCount.textColor = UIColor.red
+        }
+        else {
+            charCount.textColor = UIColor.darkGray
+        }
+        
+        // The new text should be allowed? True/False
+        return newText.characters.count < characterLimit
+    }
+
     
     
     

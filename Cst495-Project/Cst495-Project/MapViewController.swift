@@ -54,7 +54,10 @@ class MapViewController: UIViewController{
         
         self.postButton.layer.cornerRadius = 15
         self.postButton.clipsToBounds = true
-        
+        self.mapView.layer.cornerRadius = 8
+        self.mapView.clipsToBounds = true
+        mapView.layer.borderWidth = 2
+        mapView.layer.borderColor = UIColor.white.cgColor
     }
     
     
@@ -141,6 +144,13 @@ class MapViewController: UIViewController{
     @IBAction func postButton(_ sender: Any) {
         self.performSegue(withIdentifier: "postSegue", sender: self)
     }
+    
+    
+    @IBAction func logOutBtn(_ sender: Any) {
+        PFUser.logOut()
+        self.performSegue(withIdentifier: "logOutSegue", sender: nil) 
+    }
+    
     
     
     func fillArray()

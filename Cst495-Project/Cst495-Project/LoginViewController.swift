@@ -15,6 +15,12 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var whiteBox: UIImageView!
+    
+    @IBOutlet weak var logInBtn: UIButton!
+    
+    @IBOutlet weak var signupBtn: UIButton!
+    
     var currentUser = PFUser.current()
     
     
@@ -22,6 +28,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: Selector("endEditing:")))
+        
+        self.whiteBox.layer.cornerRadius = 15
+        self.whiteBox.clipsToBounds = true
+        self.logInBtn.layer.cornerRadius = 15
+        self.logInBtn.clipsToBounds = true
+        self.signupBtn.layer.cornerRadius = 15
+        self.signupBtn.clipsToBounds = true
+        whiteBox.layer.borderWidth = 2
+        whiteBox.layer.borderColor = UIColor.white.cgColor
     }
     
     
