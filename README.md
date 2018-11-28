@@ -40,6 +40,9 @@ The following **stretch** user stories are implemented:
 ## Week 4 Gif
 <a href="https://i.imgur.com/cHDKLoG.gif"><img src="https://i.imgur.com/cHDKLoG.gif" title="source: imgur.com" /></a>
 
+## Week 6 Gif
+<a href="https://i.imgur.com/qcnkStc.gif"><img src="https://i.imgur.com/qcnkStc.gif" title="source: imgur.com" /></a>
+
 ## License
 
     Copyright [2018] [Isaac Rodriguez] [Roberto Bradley] [Brandon Shimizu]
