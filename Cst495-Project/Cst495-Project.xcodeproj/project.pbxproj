@@ -15,6 +15,8 @@
 		5AFBF95A2164533400872218 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFBF9582164533400872218 /* LaunchScreen.storyboard */; };
 		5AFBF9652164533400872218 /* Cst495_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF9642164533400872218 /* Cst495_ProjectTests.swift */; };
 		5AFBF9702164533400872218 /* Cst495_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF96F2164533400872218 /* Cst495_ProjectUITests.swift */; };
+		A353E90A21AE6F5D00BC262F /* CalloutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353E90921AE6F5D00BC262F /* CalloutViewModel.swift */; };
+		A353E90C21AE751400BC262F /* PinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A353E90B21AE751400BC262F /* PinView.xib */; };
 		D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBD7217FF7F900228076 /* LoginViewController.swift */; };
 		D115DBDA2180128900228076 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D115DBD92180128900228076 /* MapKit.framework */; };
 		D115DBDC218012D600228076 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBDB218012D600228076 /* MapViewController.swift */; };
@@ -58,6 +60,8 @@
 		5B6C99CA0B489E97BCA5778A /* Pods-Cst495-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-Project/Pods-Cst495-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		91908848FFCD836423C54C92 /* Pods-Cst495-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectTests/Pods-Cst495-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		9602817BA79DEAF23BDBFD15 /* Pods-Cst495-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectUITests/Pods-Cst495-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A353E90921AE6F5D00BC262F /* CalloutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutViewModel.swift; sourceTree = "<group>"; };
+		A353E90B21AE751400BC262F /* PinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinView.xib; sourceTree = "<group>"; };
 		A49AA9F26121561B304BF865 /* Pods-Cst495-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectTests/Pods-Cst495-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0D2B105B01C6C20E0D250CF /* Pods_Cst495_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cst495_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D115DBD7217FF7F900228076 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				5AFBF9562164533400872218 /* Assets.xcassets */,
 				5AFBF9582164533400872218 /* LaunchScreen.storyboard */,
 				5AFBF95B2164533400872218 /* Info.plist */,
+				A353E90921AE6F5D00BC262F /* CalloutViewModel.swift */,
 			);
 			path = "Cst495-Project";
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			children = (
 				D115DBD7217FF7F900228076 /* LoginViewController.swift */,
 				D115DBDB218012D600228076 /* MapViewController.swift */,
+				A353E90B21AE751400BC262F /* PinView.xib */,
 				D128B40C21837A6A00E9168E /* PostViewController.swift */,
 			);
 			name = "View Controllers";
@@ -298,6 +304,7 @@
 			files = (
 				5AFBF95A2164533400872218 /* LaunchScreen.storyboard in Resources */,
 				5AFBF9572164533400872218 /* Assets.xcassets in Resources */,
+				A353E90C21AE751400BC262F /* PinView.xib in Resources */,
 				5AFBF9552164533300872218 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +336,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cst495-Project/Pods-Cst495-Project-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MapViewPlus/MapViewPlus.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 			);
@@ -337,6 +346,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MapViewPlus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseUI.framework",
 			);
@@ -410,6 +421,7 @@
 				D115DBDC218012D600228076 /* MapViewController.swift in Sources */,
 				5AFBF9502164533300872218 /* AppDelegate.swift in Sources */,
 				D128B40D21837A6A00E9168E /* PostViewController.swift in Sources */,
+				A353E90A21AE6F5D00BC262F /* CalloutViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,14 +599,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9W83V27F4X;
+				DEVELOPMENT_TEAM = N2M6KHL3RM;
 				INFOPLIST_FILE = "Cst495-Project/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bshimizu-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "isarodriguez.Cst495-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -609,14 +621,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9W83V27F4X;
+				DEVELOPMENT_TEAM = N2M6KHL3RM;
 				INFOPLIST_FILE = "Cst495-Project/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bshimizu-Project";
+				PRODUCT_BUNDLE_IDENTIFIER = "isarodriguez.Cst495-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import Parse
 
-var allPins = [MKPointAnnotation]()
+//var allData = [PFObject]()
 
 
 class MapViewController: UIViewController{
@@ -45,10 +45,12 @@ class MapViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillArray()
-        restorePins()
+        fillMap()
+        //restorePins()
+        
         checkLocationAuthorization()
         
+        //print(allData.count)
         
        
         
@@ -155,7 +157,7 @@ class MapViewController: UIViewController{
     
     
     
-    func fillArray()
+    func fillMap()
     {
         var query = PFQuery(className: "pinInfo")
         query.findObjectsInBackground
@@ -169,10 +171,11 @@ class MapViewController: UIViewController{
                 {
                     for data in latslongs
                     {
+                        
                         var newPin = MKPointAnnotation()
                         newPin.coordinate.latitude = data["pinLat"] as! CLLocationDegrees
                         newPin.coordinate.longitude = data["pinLong"] as! CLLocationDegrees
-                        allPins.append(newPin)
+                        //allData.append(data)
                         self.mapView.addAnnotation(newPin)
                     }
                 }
@@ -183,12 +186,7 @@ class MapViewController: UIViewController{
     //attempting to restore each pin saved in the array.
     func restorePins()
     {
-        for pin in allPins
-        {
-       
-
-           self.mapView.addAnnotation(pin)
-        }
+        
 
     }
     

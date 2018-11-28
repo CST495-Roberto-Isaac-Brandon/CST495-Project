@@ -87,6 +87,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         //let compressData = UIImageJPEGRepresentation(resizePic, 0.5) //max value is 1.0 and minimum is 0.0
         
         let compressData = resizePic.jpegData(compressionQuality: 0.5)
+        print("here in pickerfunction")
+        print(compressData?.count as Any)
         compressedImage = UIImage(data: compressData!)
         
         self.imagePicked.image = originalImage
@@ -117,6 +119,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         data["pinLong"] = pinLong
         data["pinLat"] = pinLat
         data["comment"] = self.textBox.text
+        print("here in pinfunction")
+        print(pinImage.jpegData(compressionQuality: 0.5)?.count as Any)
         let imagedata: NSData = pinImage.jpegData(compressionQuality: 0.5)! as! NSData
         let imageFile = PFFile(data: imagedata as Data)
         data["pinImage"] = imageFile
@@ -140,8 +144,12 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // save pin info here for loading later
         if(change == true)
         {
-            savePinInfo(pinLat: pinLat, pinLong: pinLong, pinImage: compressedImage)
-            self.performSegue(withIdentifier: "pinSegue", sender: self)
+            pinButton.isEnabled = false
+            savePinInfo(pinLat:pinLat, pinLong:pinLong, pinImage: compressedImage)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+                self.performSegue(withIdentifier: "pinSegue", sender: self)
+            })
+            
         }
         else
         {

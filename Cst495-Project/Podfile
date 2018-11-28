@@ -8,6 +8,7 @@ target 'Cst495-Project' do
   # Pods for Cst495-Project
   pod 'Parse'
   pod 'ParseUI'
+  pod 'MapViewPlus'
 
   target 'Cst495-ProjectTests' do
     inherit! :search_paths
