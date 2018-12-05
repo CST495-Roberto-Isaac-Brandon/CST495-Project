@@ -18,9 +18,14 @@ class CalloutView: UIView, CalloutViewPlus {
         let viewModel = viewModel as! CalloutModel
         pinTitle.text = viewModel.title
         pinImageView.image = viewModel.image
+        
+        self.pinImageView.layer.cornerRadius = 45
+        self.pinImageView.clipsToBounds = true
+        self.pinTitle.layer.cornerRadius = 4
+        self.pinTitle.clipsToBounds = true
     }
     
-
+    
     
 
 }
