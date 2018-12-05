@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import MapViewPlus
 import CoreLocation
 import Parse
 
@@ -30,7 +31,7 @@ class MapViewController: UIViewController{
     
     
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MapViewPlus!
     @IBOutlet weak var postButton: UIButton!
     
     
@@ -45,6 +46,7 @@ class MapViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         fillMap()
         //restorePins()
         
@@ -159,7 +161,7 @@ class MapViewController: UIViewController{
     
     func fillMap()
     {
-        var query = PFQuery(className: "pinInfo")
+        let query = PFQuery(className: "pinInfo")
         query.findObjectsInBackground
         {
             (objects, error) -> Void in
@@ -171,10 +173,14 @@ class MapViewController: UIViewController{
                 {
                     for data in latslongs
                     {
+                        let viewModel = CalloutModel(title: "Test", image: UIImage(named: "index.png")!)
                         
-                        var newPin = MKPointAnnotation()
-                        newPin.coordinate.latitude = data["pinLat"] as! CLLocationDegrees
-                        newPin.coordinate.longitude = data["pinLong"] as! CLLocationDegrees
+                        let newPin = AnnotationPlus(viewModel: viewModel,
+                                                        coordinate: CLLocationCoordinate2DMake(data["pinLat"] as! CLLocationDegrees, data["pinLong"] as! CLLocationDegrees))
+                        
+                        //var newPin = MKPointAnnotation()
+                        //newPin.coordinate.latitude = data["pinLat"] as! CLLocationDegrees
+                        //newPin.coordinate.longitude = data["pinLong"] as! CLLocationDegrees
                         //allData.append(data)
                         self.mapView.addAnnotation(newPin)
                     }
@@ -209,9 +215,6 @@ class MapViewController: UIViewController{
    
 }
 
-
-
-
 extension MapViewController: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -223,9 +226,21 @@ extension MapViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
     }
-    
+}
 
+extension MapViewController: MapViewPlusDelegate {
     
+    func mapView(_ mapView: MapViewPlus, imageFor annotation: AnnotationPlus) -> UIImage {
+        return UIImage(named: "index.png")!
+    }
     
+    func mapView(_ mapView: MapViewPlus, calloutViewFor annotationView: AnnotationViewPlus) -> CalloutViewPlus{
+        let calloutView = Bundle.main.loadNibNamed("PinView", owner: self, options: nil)!.first as! CalloutView
+        return calloutView
+    }
+    
+    func mapView(_ mapView: MapViewPlus, didAddAnnotations annotations: [AnnotationPlus]) {
+        mapView.showAnnotations(annotations, animated: true)
+    }
 }
 

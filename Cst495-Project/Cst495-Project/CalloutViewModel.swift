@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Parse
 import MapViewPlus
 
-class Callout: CalloutViewModel{
+class CalloutModel: CalloutViewModel{
     var title: String
     var image: UIImage
     

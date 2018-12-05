@@ -17,6 +17,7 @@
 		5AFBF9702164533400872218 /* Cst495_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFBF96F2164533400872218 /* Cst495_ProjectUITests.swift */; };
 		A353E90A21AE6F5D00BC262F /* CalloutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A353E90921AE6F5D00BC262F /* CalloutViewModel.swift */; };
 		A353E90C21AE751400BC262F /* PinView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A353E90B21AE751400BC262F /* PinView.xib */; };
+		A37D2CB921B8344700927C7A /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37D2CB821B8344700927C7A /* CalloutView.swift */; };
 		D115DBD8217FF7F900228076 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBD7217FF7F900228076 /* LoginViewController.swift */; };
 		D115DBDA2180128900228076 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D115DBD92180128900228076 /* MapKit.framework */; };
 		D115DBDC218012D600228076 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115DBDB218012D600228076 /* MapViewController.swift */; };
@@ -62,6 +63,7 @@
 		9602817BA79DEAF23BDBFD15 /* Pods-Cst495-ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectUITests/Pods-Cst495-ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A353E90921AE6F5D00BC262F /* CalloutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutViewModel.swift; sourceTree = "<group>"; };
 		A353E90B21AE751400BC262F /* PinView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinView.xib; sourceTree = "<group>"; };
+		A37D2CB821B8344700927C7A /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
 		A49AA9F26121561B304BF865 /* Pods-Cst495-ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cst495-ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cst495-ProjectTests/Pods-Cst495-ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0D2B105B01C6C20E0D250CF /* Pods_Cst495_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cst495_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D115DBD7217FF7F900228076 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -151,11 +153,12 @@
 			children = (
 				D115DBD6217FF7B100228076 /* View Controllers */,
 				5AFBF94F2164533300872218 /* AppDelegate.swift */,
+				A37D2CB821B8344700927C7A /* CalloutView.swift */,
+				A353E90921AE6F5D00BC262F /* CalloutViewModel.swift */,
 				5AFBF9532164533300872218 /* Main.storyboard */,
 				5AFBF9562164533400872218 /* Assets.xcassets */,
 				5AFBF9582164533400872218 /* LaunchScreen.storyboard */,
 				5AFBF95B2164533400872218 /* Info.plist */,
-				A353E90921AE6F5D00BC262F /* CalloutViewModel.swift */,
 			);
 			path = "Cst495-Project";
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				5AFBF9502164533300872218 /* AppDelegate.swift in Sources */,
 				D128B40D21837A6A00E9168E /* PostViewController.swift in Sources */,
 				A353E90A21AE6F5D00BC262F /* CalloutViewModel.swift in Sources */,
+				A37D2CB921B8344700927C7A /* CalloutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

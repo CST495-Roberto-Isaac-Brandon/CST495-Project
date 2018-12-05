@@ -119,7 +119,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         data["pinLong"] = pinLong
         data["pinLat"] = pinLat
         data["comment"] = self.textBox.text
-        data["user"] = PFUser.self
+        //data["user"] = PFUser.self
         print("here in pinfunction")
         print(pinImage.jpegData(compressionQuality: 0.5)?.count as Any)
         let imagedata: NSData = pinImage.jpegData(compressionQuality: 0.5)! as! NSData
