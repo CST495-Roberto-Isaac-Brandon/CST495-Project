@@ -341,6 +341,7 @@
         <image name="placeholder" width="800" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="IOc-hi-cua"/>
         <segue reference="Zq2-BE-KCQ"/>
     </inferredMetricsTieBreakers>
 </document>
