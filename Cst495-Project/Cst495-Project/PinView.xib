@@ -35,11 +35,37 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oq3-Ef-vKW">
+                    <rect key="frame" x="9" y="137" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="pinMinusWhite"/>
+                    <connections>
+                        <action selector="onDislikeTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="CWU-Lp-Xee"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fy-Sj-DGO">
+                    <rect key="frame" x="87" y="144" width="84" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDy-Zu-Mmi">
+                    <rect key="frame" x="215" y="137" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="pinPlusWhite"/>
+                    <connections>
+                        <action selector="onLikeTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZVl-MN-SWZ"/>
+                    </connections>
+                </button>
             </subviews>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="TextBox" destination="3q1-kR-9eB" id="VSr-pn-zpX"/>
+                <outlet property="dislikeButton" destination="Oq3-Ef-vKW" id="8uJ-79-uRF"/>
+                <outlet property="likeButton" destination="pDy-Zu-Mmi" id="eSP-LF-xpz"/>
+                <outlet property="likeCount" destination="7Fy-Sj-DGO" id="st2-JZ-BPP"/>
                 <outlet property="pinImageView" destination="dMc-HC-0H9" id="lCc-Wp-3vQ"/>
                 <outlet property="pinTitle" destination="Zh1-xe-NFU" id="x44-mA-98d"/>
             </connections>
@@ -47,6 +73,8 @@
         </view>
     </objects>
     <resources>
+        <image name="pinMinusWhite" width="35" height="35"/>
+        <image name="pinPlusWhite" width="35" height="35"/>
         <image name="starPattern" width="1000" height="470"/>
     </resources>
 </document>
