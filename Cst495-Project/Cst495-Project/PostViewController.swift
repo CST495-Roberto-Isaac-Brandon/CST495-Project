@@ -84,7 +84,6 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let originalImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         resizePic = originalImage.resizeWithWidth(width: 200)!
-        //let compressData = UIImageJPEGRepresentation(resizePic, 0.5) //max value is 1.0 and minimum is 0.0
         
         let compressData = resizePic.jpegData(compressionQuality: 0.5)
         print("here in pickerfunction")
@@ -96,21 +95,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         change = true
         dismiss(animated: true, completion: nil)
         
-        // Do something with the images (based on your use case)Cannot subscript a value of type '[String : Any]' with an index of type 'UIImagePickerController.InfoKe
-        
-        // Dismiss UIImagePickerController to go back to your original view controller
-        
     }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "pinSegue" {
-//            let dvc = segue.destination as? MapViewController
-//            //dvc?.setPin()
-//            print("entered the segue zone")
-//        }
-//    }
-    
-    //func savePinInfo(pinLat: Double, pinLong: Double, pinImage: UIImage)
     
     func savePinInfo(pinLat: Double, pinLong: Double, pinImage: UIImage)
     {
@@ -177,18 +163,16 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        // TODO: Check the proposed new text character count
-        // Allow or disallow the new text
-        // Set the max character limit
-        let characterLimit = 140
+        
+        let characterLimit = 70
         
         // Construct what the new text would be if we allowed the user's latest edit
         let newText = NSString(string: textView.text!).replacingCharacters(in: range, with: text)
         
         // TODO: Update Character Count Label
-        charCount.text = String(140 - newText.characters.count)
+        charCount.text = String(70 - newText.characters.count)
         
-        if newText.characters.count >= 130 {
+        if newText.characters.count >= 60 {
             charCount.textColor = UIColor.red
         }
         else {

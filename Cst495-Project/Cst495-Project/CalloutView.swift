@@ -19,13 +19,13 @@ class CalloutView: UIView, CalloutViewPlus {
         pinTitle.text = viewModel.title
         pinImageView.image = viewModel.image
         
-        self.pinImageView.layer.cornerRadius = 45
+        self.pinImageView.layer.cornerRadius = 4
         self.pinImageView.clipsToBounds = true
         self.pinTitle.layer.cornerRadius = 4
         self.pinTitle.clipsToBounds = true
+        self.pinImageView.layer.borderWidth = 2
+        self.pinImageView.layer.borderColor = UIColor.yellow.cgColor
+        
     }
     
-    
-    
-
 }
